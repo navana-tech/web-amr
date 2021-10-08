@@ -10,6 +10,40 @@ const LOADEDDATA = new Event("loadeddata");
 const TIMEUPDATE = new Event("timeupdate");
 const PLAYERENDED = new Event("playerended");
 
+const MEDIA_ERR_ABORTED = 1;
+const MEDIA_ERR_NETWORK = 2;
+const MEDIA_ERR_DECODE = 3;
+const MEDIA_ERR_SRC_NOT_SUPPORTED = 4;
+
+const decodeError = () =>
+	Object.assign(new EventTarget(), {
+		duration: 0,
+		currentTime: 0,
+		error: {
+			message: "Could not decode AMR audio",
+			code: MEDIA_ERR_DECODE,
+			MEDIA_ERR_ABORTED,
+			MEDIA_ERR_NETWORK,
+			MEDIA_ERR_DECODE,
+			MEDIA_ERR_SRC_NOT_SUPPORTED,
+		},
+		play() {
+			throw new Error("Player has errored.");
+		},
+		pause() {
+			throw new Error("Player has errored.");
+		},
+		fastSeek() {
+			throw new Error("Player has errored.");
+		},
+		get paused() {
+			return false;
+		},
+		get ended() {
+			return false;
+		},
+	});
+
 export const AMRPlayer = (
 	file: ArrayBuffer,
 	{ onEnd = () => {} }: { onEnd?: () => void } = {},
@@ -17,7 +51,7 @@ export const AMRPlayer = (
 	const buf = new Uint8Array(file);
 
 	const samples = AMR.decode(buf);
-	if (!samples) throw new Error("Cannot decode amr");
+	if (!samples) return decodeError();
 
 	const audioContext = getAudioContext();
 
@@ -37,6 +71,8 @@ export const AMRPlayer = (
 	};
 
 	const events = new EventTarget();
+	const addEventListener = events.addEventListener.bind(events);
+	const removeEventListener = events.removeEventListener.bind(events);
 
 	const createBufferSource = (startFrom: number = 0) => {
 		// 8000 samples/second = 8 samples/millisecond
@@ -155,8 +191,8 @@ export const AMRPlayer = (
 	setTimeout(() => events.dispatchEvent(LOADEDDATA), 100);
 
 	return {
-		addEventListener: events.addEventListener.bind(events),
-		removeEventListener: events.removeEventListener.bind(events),
+		addEventListener,
+		removeEventListener,
 
 		play,
 		pause,
@@ -166,7 +202,7 @@ export const AMRPlayer = (
 
 		/* these methods don't exist on HTMLMediaElement,
 		 * and are omitted for conformance; however
-		 * if a need arises, we could enable them
+		 * if need arises, we could enable them
 		 */
 
 		// stop,
