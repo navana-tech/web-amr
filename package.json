@@ -1,6 +1,6 @@
 {
 	"name": "web-amr",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": " AMR Player for the web",
 	"main": "dist",
 	"files": [
@@ -19,6 +19,10 @@
 		"narrowband",
 		"web-audio"
 	],
+	"homepage": "https://github.com/navana-tech/web-amr#readme",
+	"bugs": {
+		"url": "https://github.com/navana-tech/web-amr/issues"
+	},
 	"author": "Navana Tech (https://navanatech.in)",
 	"contributors": [
 		"Muthu Kumar <@mkrnavana> (https://mkr.pw)"
