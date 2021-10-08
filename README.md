@@ -95,4 +95,4 @@ Use `pnpm` as your package manager while installing dependencies. Make sure `pnp
 
 ## Acknowledgement
 
-This project uses an emscripten build of [OpenCORE-AMR](https://sourceforge.net/projects/opencore-amr/) from (yxl)[https://github.com/yxl/opencore-amr-js].
+This project uses an emscripten build of [OpenCORE-AMR](https://sourceforge.net/projects/opencore-amr/) from [yxl](https://github.com/yxl/opencore-amr-js).
