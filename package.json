@@ -1,16 +1,19 @@
 {
-  "name": "web-amr",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:navana-tech/web-amr"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "MIT"
+	"name": "@navanatech/amr",
+	"version": "0.0.1",
+	"description": " AMR Player for the web and nodejs",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:navana-tech/web-amr"
+	},
+	"keywords": [],
+	"author": "Navana Tech",
+	"contributors": [
+		"Muthu Kumar <@mkrnavana> (https://mkr.pw)"
+	],
+	"license": "MIT"
 }
