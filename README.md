@@ -47,45 +47,45 @@ player.play();
 
 ## Available methods
 
-### `addEventListener`
+#### `addEventListener`
 
 Appends an event listener for events. The callback argument sets the callback that will be invoked when the event is dispatched.
 
-### `removeEventListener`
+#### `removeEventListener`
 
 Removes the event listener in target's event listener list with the same type and callback.
 
-### `play: (): Promise<void>`
+#### `play: (): Promise<void>`
 
 Loads and starts playback of the AMR audio.
 
-### `pause: (): Promise<void>`
+#### `pause: (): Promise<void>`
 
 Pauses the current playback.
 
-### `fastSeek: (seconds: number): Promise<void>`
+#### `fastSeek: (seconds: number): Promise<void>`
 
 Sets the current playback position, in seconds.
 
 ## Props
 
-### `duration: number`
+#### `duration: number`
 
 Returns the duration in seconds of the current media resource. A NaN value is returned if duration is not available.
 
-### `currentTime: number`
+#### `currentTime: number`
 
 Gets or sets the current playback position, in seconds.
 
-### `readonly` `paused: boolean`
+#### `readonly` `paused: boolean`
 
 Gets a flag that specifies whether playback is paused.
 
-### `readonly` `ended: boolean`
+#### `readonly` `ended: boolean`
 
 Gets information about whether the playback has ended or not.
 
-### `readonly` `error: MediaError | null`
+#### `readonly` `error: MediaError | null`
 
 Returns an object representing the current error state of the audio.
 
