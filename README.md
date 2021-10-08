@@ -1,4 +1,4 @@
-# @navanatech/amr
+# web-amr
 
 AMR audio codec is an audio compression format optimized for speech coding. Since AMR is not a supported web audio format, this library provides an implementation of AMR for use in the web.
 
@@ -8,19 +8,19 @@ AMR audio codec is an audio compression format optimized for speech coding. Sinc
 
 ```sh
 # Using npm
-npm install @navanatech/amr
+npm install web-amr
 
 # Using yarn
-yarn add @navanatech/amr
+yarn add web-amr
 
 # Using pnpm
-pnpm add @navanatech/amr
+pnpm add web-amr
 ```
 
 ## Usage
 
 ```TypeScript
-import { AMRPlayer } from "@navanatech/amr";
+import { AMRPlayer } from "web-amr";
 
 const player = AMRPlayer(buffer); // pass file as ArrayBuffer
 ```
@@ -30,7 +30,7 @@ If the buffer failed to be decoded, `player.error` will be set. You can check fo
 The returned `player` instance implements a subset of the [`HTMLMediaElement` API](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement). Hence, you can use it as a drop-in for a real HTML5 audio player. It might be that this subset of APIs is all that you need from both; in that case, it's safe to do this:
 
 ```TypeScript
-import type { Player } from "@navanatech/amr";
+import type { Player } from "web-amr";
 
 // assume we have isAMR, audioElement, file,
 // and a function "read" that returns ArrayBuffer

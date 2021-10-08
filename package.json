@@ -1,5 +1,5 @@
 {
-	"name": "@navanatech/amr",
+	"name": "web-amr",
 	"version": "0.0.1",
 	"description": " AMR Player for the web",
 	"main": "dist",
