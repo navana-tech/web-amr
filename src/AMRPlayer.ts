@@ -17,8 +17,8 @@ const MEDIA_ERR_SRC_NOT_SUPPORTED = 4;
 
 const decodeError = () =>
 	Object.assign(new EventTarget(), {
-		duration: 0,
-		currentTime: 0,
+		duration: NaN,
+		currentTime: NaN,
 		error: {
 			message: "Could not decode AMR audio",
 			code: MEDIA_ERR_DECODE,

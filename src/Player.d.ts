@@ -17,7 +17,10 @@ export type Player = {
 	 */
 	play: () => Promise<void>;
 
-	fastSeek: (ms: number) => Promise<void>;
+	/**
+	 * Sets the current playback position, in seconds.
+	 */
+	fastSeek: (seconds: number) => Promise<void>;
 
 	/**
 	 * Pauses the current playback and sets paused to TRUE. This can be used to test whether the media is playing or paused. You can also use the pause or play events to tell whether the media is playing or not.
