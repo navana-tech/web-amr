@@ -1,5 +1,5 @@
 /**
- * Player is a subset of HTMLMediaElement API implemented by AMRPlayer
+ * Player is a subset of HTMLAudioElement API implemented by AMRPlayer
  */
 export type Player = {
 	/**
@@ -20,12 +20,12 @@ export type Player = {
 	/**
 	 * Sets the current playback position, in seconds.
 	 */
-	fastSeek: (seconds: number) => Promise<void>;
+	fastSeek: (seconds: number) => void;
 
 	/**
-	 * Pauses the current playback and sets paused to TRUE. This can be used to test whether the media is playing or paused. You can also use the pause or play events to tell whether the media is playing or not.
+	 * Pauses the current playback and sets paused to TRUE.
 	 */
-	pause: () => Promise<void>;
+	pause: () => void;
 
 	/**
 	 * Returns the duration in seconds of the current media resource. A NaN value is returned if duration is not available, or Infinity if the media resource is streaming.

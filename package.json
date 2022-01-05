@@ -1,6 +1,6 @@
 {
 	"name": "web-amr",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"description": " AMR Player for the web",
 	"main": "dist",
 	"files": [
