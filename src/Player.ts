@@ -1,5 +1,5 @@
 /**
- * Player is a subset of HTMLAudioElement API implemented by AMRPlayer
+ * Player is a subset of HTMLMediaElement API implemented by AMRPlayer
  */
 export type Player = {
 	/**

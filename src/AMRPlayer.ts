@@ -8,7 +8,7 @@ const getAudioContext = () => {
 
 const LOADEDDATA = new Event("loadeddata");
 const TIMEUPDATE = new Event("timeupdate");
-const PLAYERENDED = new Event("playerended");
+const PLAYERENDED = new Event("ended");
 
 const MEDIA_ERR_ABORTED = 1;
 const MEDIA_ERR_NETWORK = 2;
